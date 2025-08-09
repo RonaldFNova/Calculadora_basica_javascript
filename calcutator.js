@@ -35,27 +35,27 @@ document.addEventListener("DOMContentLoaded", function () {
       botonElmininar.textContent = "Eliminar";
       botonCopiar.textContent = "Copiar";
 
-      botonElmininar.addEventListener("click", function (){
-        elemento.remove()
-        ArrayOperaciones.splice(n, 1);
+      botonElmininar.addEventListener("click", function (objeto) {
+        let divPadre = objeto.target.parentElement; 
+        let id = parseInt(divPadre.id);
+        divPadre.remove();
+        ArrayOperaciones.splice(id, 1);
       });
 
-      botonCopiar.addEventListener("click", function (){
-        let texto = document.getElementById(n).textContent;
-        texto = texto.replace("Eliminar","")
-        texto = texto.replace("Copiar","")
+      botonCopiar.addEventListener("click", function (objeto){
+        let divPadre = objeto.target.parentElement; 
+        let texto = divPadre.textContent;
+        texto = texto.replace("Eliminar","").replace("Copiar","");
         navigator.clipboard.writeText(texto)  
-      });
+      }); 
 
       document.getElementById(n).appendChild(botonElmininar);
       document.getElementById(n).appendChild(botonCopiar);
-          
     }
   }
-
 });
 
-window.addEventListener("beforeunload", function (){
+  window.addEventListener("beforeunload", function (){
   localStorage.setItem("historial", JSON.stringify(ArrayOperaciones));
 
 });
@@ -69,15 +69,13 @@ function AgregarDato(caracter) {
       return;
     } 
 
-
     ActivarCero = false;
-
     document.getElementById("Pantalla").value += caracter;
   }
   else {
 
-  if (cantidadcero > 0)
-    {
+  if (cantidadcero > 0){
+
       document.getElementById("Pantalla").value += caracter;
       cantidadcero = 0 ;
       ActivarCero = false;
@@ -91,7 +89,6 @@ function AgregarDato(caracter) {
     document.getElementById("Pantalla").value = caracter;
     ActivarCero = false;
     return;
-
    }
 
     else if(ValidarParentesis(caracter)) return;
@@ -99,9 +96,7 @@ function AgregarDato(caracter) {
     document.getElementById("Pantalla").value += caracter;
     ActivarCero = false;
   }
-  
 }
-
 
 function BorrarDatos() {
   document.getElementById("Pantalla").value = "0";
@@ -126,6 +121,7 @@ function OperacionTotal() {
   valorCambiado = valorCambiado.replace("÷", "/");
   respuesta = eval(valorCambiado);
   document.getElementById("Pantalla").value = respuesta;
+  cantidadcero = 0 ;
   GuardarOperacion(valorCambiado, respuesta)
 }
 
@@ -145,22 +141,22 @@ function GuardarOperacion(valor, respuesta) {
   botonElmininar.classList.add("boton-eliminar");
   botonCopiar.classList.add("boton-copiar");
 
-  botonElmininar.id = cantidad;
-  botonCopiar.id = cantidad;
-
   botonElmininar.textContent = "Eliminar";
   botonCopiar.textContent = "Copiar";
 
-  botonElmininar.addEventListener("click", function (){
-    elemento.remove()
-
+  botonElmininar.addEventListener("click", function (objeto) {
+    let divPadre = objeto.target.parentElement; 
+    let id = parseInt(divPadre.id);
+    divPadre.remove();
+    ArrayOperaciones.splice(id, 1);
   });
 
-  botonCopiar.addEventListener("click", function (){
-    let texto = document.getElementById(cantidad-1).textContent;
-    texto = texto.replace("Eliminar","")
-    texto = texto.replace("Copiar","")
+  botonCopiar.addEventListener("click", function (objeto){
+    let divPadre = objeto.target.parentElement; 
+    let texto = String(divPadre.textContent);
+    texto = texto.replace("Eliminar","").replace("Copiar","");
     navigator.clipboard.writeText(texto)  
+    console.log(texto)
   });
 
   document.getElementById(cantidad).appendChild(botonElmininar);
