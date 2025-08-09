@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+
+</head>
+
+<body>
+  <h1>Calculadora de Javascript</h1>
+
+  <div class="contenedor-principal">
+    <section class="calculadora">
+      <input type="text" id="Pantalla" readonly>
+      <br>
+      <input class="boton-operadores" type="button" value="null" onclick="AgregarDato('ParentesisD')">
+      <input class="boton-operadores" type="button" value="%" onclick="AgregarDato('ParentesisD')">
+      <input class="boton-operadores" type="button" value="x!" onclick="AgregarDato('ParentesisD')">
+      <input class="boton-operadores" type="button" value="(" onclick="AgregarDato('ParentesisD')">
+      <input class="boton-operadores" type="button" value=")" onclick="AgregarDato('ParentesisIZ')">
+      <input class="boton-operadores" type="button" value="AC" onclick="BorrarDatos()">
+      <input class="boton-operadores" type="button" value="C" onclick="BorrarCaracter()">
+      <br>
+      <input class="boton-operadores" type="button" value="inv" onclick="AgregarDato('ParentesisD')">
+      <input class="boton-operadores" type="button" value="sin" onclick="AgregarDato('ParentesisD')">
+      <input class="boton-operadores" type="button" value="ln" onclick="AgregarDato('ParentesisD')">
+      <input type="button" value="7" onclick="AgregarDato('7')">
+      <input type="button" value="8" onclick="AgregarDato('8')">
+      <input type="button" value="9" onclick="AgregarDato('9')">
+      <input class="boton-operadores" type="button" value="+" onclick="AgregarDato('+')">
+      <br>
+      <input class="boton-operadores" type="button" value="π" onclick="AgregarDato('ParentesisD')">
+      <input class="boton-operadores" type="button" value="cos" onclick="AgregarDato('ParentesisD')">
+      <input class="boton-operadores" type="button" value="log" onclick="AgregarDato('ParentesisD')">
+      <input type="button" value="4" onclick="AgregarDato('4')">
+      <input type="button" value="5" onclick="AgregarDato('5')">
+      <input type="button" value="6" onclick="AgregarDato('6')">
+      <input class="boton-operadores" type="button" value="-" onclick="AgregarDato('-')">
+      <br>
+      <input class="boton-operadores" type="button" value="e" onclick="AgregarDato('ParentesisD')">
+      <input class="boton-operadores" type="button" value="tan" onclick="AgregarDato('ParentesisD')">
+      <input class="boton-operadores" type="button" value="√ " onclick="AgregarDato('ParentesisD')">
+      <input type="button" value="1" onclick="AgregarDato('1')">
+      <input type="button" value="2" onclick="AgregarDato('2')">
+      <input type="button" value="3" onclick="AgregarDato('3')">
+      <input class="boton-operadores" type="button" value="x" onclick="AgregarDato('x')">
+      <br>
+      <input class="boton-operadores" type="button" value="Ans" onclick="AgregarDato('ParentesisD')">
+      <input class="boton-operadores" type="button" value="EXP" onclick="AgregarDato('ParentesisD')">
+      <input class="boton-operadores" type="button" value="x²" onclick="AgregarDato('ParentesisD')">
+      <input type="button" value="0" onclick="AgregarDato('0')">
+      <input type="button" value="." onclick="AgregarDato('.')">
+      <input class="boton-igual" type="button" value="=" onclick="OperacionTotal()">
+      <input class="boton-operadores" type="button" value="÷" onclick="AgregarDato('÷')">
+      <br>
+    </section>
+
+    <section class="history">
+      <div class="history__box" id="history__box" >
+        <!-- Aquí puedes agregar historial -->
+      </div>
+    </section>
+  </div>
+</body>
+
+</html>

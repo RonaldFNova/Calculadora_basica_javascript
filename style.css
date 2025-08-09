@@ -15,7 +15,7 @@ h2 {
 }
 
 .calculadora {
-  width: 314px;
+  width: 555px;
   margin: 0;
   background-color: #fff;
   padding: 20px;
@@ -25,10 +25,15 @@ h2 {
 
 #Pantalla {
   width: 90%;
-  padding: 10px;
-  font-size: 20px;
+  padding: 15px 20px; 
+  font-size: 24px; 
   margin-bottom: 10px;
   text-align: right;
+
+  border: 1px solid #ddd;
+  border-radius: 25px; 
+  outline: none;
+  background-color: #fff;
 }
 
 input[type="button"] {
@@ -37,19 +42,37 @@ input[type="button"] {
   margin-right: 5px;
   margin-bottom: 5px;
   font-size: 16px;
-  background-color: #eee;
+  background-color: #f5f5f5; 
+  color: #333; 
   border: none;
-  border-radius: 5px;
+  border-radius: 9999px; 
   cursor: pointer;
+  transition: background-color 0.2s ease; 
 }
 
 input[type="button"]:hover {
-  background-color: #ddd;
+  background-color: #e0e0e0; 
 }
 
 input[type="button"]:last-child {
   margin-right: 0;
 }
+
+.calculadora .boton-operadores {
+  background-color: #e8f0fe; 
+  color: #1967d2;
+}
+
+.calculadora .boton-igual {
+  background-color: #1a73e8; 
+  color: white;
+}
+
+
+input.operator:hover {
+  background-color: #d2e3fc; 
+}
+
 
 
 .contenedor-principal {
@@ -63,8 +86,8 @@ input[type="button"]:last-child {
 
 .history__box {
   display: flex;
-  flex-direction: column; /* <- Esto hace que los elementos se apilen verticalmente */
-  gap: 10px; /* Espacio entre operaciones */
+  flex-direction: column; 
+  gap: 10px; 
   min-height: 175.219px;
   width: 280px;
   background-color: #e6eaef;
@@ -77,32 +100,28 @@ input[type="button"]:last-child {
 }
 
 .historial-item {
-  background-color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
   padding: 10px;
-  border-radius: 5px;
-  box-shadow: 0 0 5px rgba(0,0,0,0.1);
-  font-weight: bold;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 
-
-.boton-copiar,
-.boton-eliminar {
-  width: 40px;
-  height: 40px;
+button {
+  padding: 5px 10px;
   border: none;
-  border-radius: 10px;
+  border-radius: 8px;
+  color: white;
   cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+}
+
+.boton-eliminar {
+  background-color: #e74c3c;
 }
 
 .boton-copiar {
-  background-color: #28a745;
-  color: white;
+  background-color: #2ecc71;
 }
 
-.boton-eliminar {
-  background-color: #dc3545;
-  color: white;
-}
